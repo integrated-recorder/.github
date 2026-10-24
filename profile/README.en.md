@@ -13,6 +13,7 @@ Source Plugins
   source.hls           bundled in Core
   source.owncast       official Registry, first-party
   source.soop          development / experimental
+  source.chzzk         development / experimental
   third-party plugins
         │
         │ Adapter Protocol v1
@@ -40,6 +41,7 @@ Core alone decides what archived bytes mean: it owns Recording identity, metadat
 | [plugin-registry](https://github.com/integrated-recorder/plugin-registry) | Official index of approved exact plugin artifacts. It does not build source code. |
 | [source.owncast](https://github.com/integrated-recorder/source.owncast) | Owncast integration. A first-party plugin, not bundled in Core, distributed as v0.2.0 through the Registry. |
 | [source.soop](https://github.com/integrated-recorder/source.soop) | SOOP integration development repository. High-quality stream selection remains unresolved, so stable Registry distribution is deferred. |
+| [source.chzzk](https://github.com/integrated-recorder/source.chzzk) | CHZZK integration. Public first-party source plugin in development/experimental status; real historical DVR recording end-to-end and Registry distribution have not yet been verified/completed. |
 
 There are no separate repositories today for storage providers. `source.hls` and `storage.local` are bundled implementations inside Core.
 
@@ -55,11 +57,11 @@ The plugin publisher builds and publishes an immutable executable release in the
 
 ## Current status
 
-The project is in **active development**; Core does not yet have a stable public release. Owncast is a first-party v0.2.0 plugin in the official Registry. SOOP is under development/experimental, with stable distribution deferred while its high-quality stream selection issue remains unresolved.
+The project is in **active development**; Core does not yet have a stable public release. Owncast is a first-party v0.2.0 plugin in the official Registry. SOOP is under development/experimental, with stable distribution deferred while its high-quality stream selection issue remains unresolved. CHZZK is a public first-party source plugin in development/experimental status; real historical DVR recording end-to-end validation and Registry listing are still pending.
 
 ## Where to start
 
 - **Users:** Start with the Docker Compose quick start and setup wizard in [Core](https://github.com/integrated-recorder/core).
 - **Source Plugin developers:** Start with the [Go Adapter SDK](https://github.com/integrated-recorder/adapter-sdk-go) and Core's `adapter-conformance`.
 - **Official plugin catalog:** Browse the [Plugin Registry v3 catalog](https://integrated-recorder.github.io/plugin-registry/catalog-v3.json).
-- **A specific integration:** See [source.owncast](https://github.com/integrated-recorder/source.owncast) or [source.soop](https://github.com/integrated-recorder/source.soop).
+- **A specific integration:** See [source.owncast](https://github.com/integrated-recorder/source.owncast), [source.soop](https://github.com/integrated-recorder/source.soop), or [source.chzzk](https://github.com/integrated-recorder/source.chzzk).

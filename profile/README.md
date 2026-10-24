@@ -13,6 +13,7 @@ Source Plugins
   source.hls           Core bundled
   source.owncast       official Registry, first-party
   source.soop          development / experimental
+  source.chzzk         development / experimental
   third-party plugins
         │
         │ Adapter Protocol v1
@@ -40,6 +41,7 @@ Core alone decides what archived bytes mean: it owns Recording identity, metadat
 | [plugin-registry](https://github.com/integrated-recorder/plugin-registry) | 승인된 exact plugin artifact의 official index입니다. source를 build하지 않습니다. |
 | [source.owncast](https://github.com/integrated-recorder/source.owncast) | Owncast integration. first-party plugin이며 Core에 bundled되지 않고 Registry에서 v0.2.0으로 배포됩니다. |
 | [source.soop](https://github.com/integrated-recorder/source.soop) | SOOP integration 개발 저장소. 고화질 stream 선택이 해결되지 않아 stable Registry 배포 대상이 아닙니다. |
+| [source.chzzk](https://github.com/integrated-recorder/source.chzzk) | CHZZK integration. 공개 first-party source plugin이며 개발/실험 중입니다. 실제 historical DVR recording end-to-end와 Registry 배포는 아직 검증·완료되지 않았습니다. |
 
 현재 존재하지 않는 storage provider 전용 저장소는 없습니다. `source.hls`와 `storage.local`은 각각 Core에 포함된 bundled implementation입니다.
 
@@ -55,11 +57,11 @@ Plugin publisher는 자신의 저장소에서 immutable executable release를 bu
 
 ## 현재 상태
 
-프로젝트는 **active development** 상태이며 Core의 안정적인 public release는 아직 없습니다. Owncast는 official Registry의 first-party v0.2.0 plugin입니다. SOOP은 개발/실험 중이고 고화질 stream 선택 문제 때문에 stable 배포를 보류하고 있습니다.
+프로젝트는 **active development** 상태이며 Core의 안정적인 public release는 아직 없습니다. Owncast는 official Registry의 first-party v0.2.0 plugin입니다. SOOP은 개발/실험 중이고 고화질 stream 선택 문제 때문에 stable 배포를 보류하고 있습니다. CHZZK는 공개 first-party source plugin의 개발/실험 버전이며, 실제 historical DVR recording end-to-end 검증과 Registry 등록은 아직 완료되지 않았습니다.
 
 ## 어디서 시작할까요?
 
 - **사용자:** [Core](https://github.com/integrated-recorder/core)의 Docker Compose quick start와 setup wizard를 시작하세요.
 - **Source Plugin 개발자:** [Go Adapter SDK](https://github.com/integrated-recorder/adapter-sdk-go)와 Core의 `adapter-conformance`를 확인하세요.
 - **공식 plugin 목록:** [Plugin Registry v3 catalog](https://integrated-recorder.github.io/plugin-registry/catalog-v3.json)를 확인하세요.
-- **특정 integration:** [source.owncast](https://github.com/integrated-recorder/source.owncast) 또는 [source.soop](https://github.com/integrated-recorder/source.soop)를 살펴보세요.
+- **특정 integration:** [source.owncast](https://github.com/integrated-recorder/source.owncast), [source.soop](https://github.com/integrated-recorder/source.soop), [source.chzzk](https://github.com/integrated-recorder/source.chzzk)를 살펴보세요.
