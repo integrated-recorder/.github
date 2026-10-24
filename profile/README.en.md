@@ -34,16 +34,28 @@ Core alone decides what archived bytes mean: it owns Recording identity, metadat
 
 ## Repository map
 
+### Core and operations
+
 | Repository | Role |
 | --- | --- |
-| [core](https://github.com/integrated-recorder/core) | Integrated Recorder runtime. Owns Runtime Host, Recorder Engine, Control Plane, Web UI/API, canonical archives, and plugin lifecycle. |
-| [adapter-sdk-go](https://github.com/integrated-recorder/adapter-sdk-go) | Go Source Plugin authoring SDK. Provides protocol APIs and framing; Core's conformance runner is the final executable compatibility authority. |
-| [plugin-registry](https://github.com/integrated-recorder/plugin-registry) | Official index of approved exact plugin artifacts. It does not build source code. |
-| [source.owncast](https://github.com/integrated-recorder/source.owncast) | Owncast integration. A first-party plugin, not bundled in Core, distributed as v0.2.0 through the Registry. |
-| [source.soop](https://github.com/integrated-recorder/source.soop) | SOOP integration development repository. High-quality stream selection remains unresolved, so stable Registry distribution is deferred. |
-| [source.chzzk](https://github.com/integrated-recorder/source.chzzk) | CHZZK integration. Public first-party source plugin in development/experimental status; real historical DVR recording end-to-end and Registry distribution have not yet been verified/completed. |
+| [core](https://github.com/integrated-recorder/core) | The Integrated Recorder application: Runtime Host, Recorder Engine, Control Plane, Web UI/API, canonical archives, and plugin lifecycle. It also owns the official installer, Docker deployment, and installation/upgrade operations documentation. |
 
-There are no separate repositories today for storage providers. `source.hls` and `storage.local` are bundled implementations inside Core.
+There is no separate operations/deployment repository. Installation and upgrade procedures live in `core`. `source.hls` and `storage.local` are bundled implementations in Core, not separate repositories.
+
+### Source plugins
+
+| Repository | Role |
+| --- | --- |
+| [source.owncast](https://github.com/integrated-recorder/source.owncast) | Owncast integration. A first-party plugin not bundled in Core, distributed as v0.2.0 through the Registry. |
+| [source.soop](https://github.com/integrated-recorder/source.soop) | SOOP integration development repository. High-quality stream selection is still being addressed, so stable Registry distribution is deferred. |
+| [source.chzzk](https://github.com/integrated-recorder/source.chzzk) | CHZZK integration. Public first-party source plugin in development/experimental status; real historical DVR recording end-to-end remains unverified, and it is not listed in the Registry. |
+
+### Plugin development and distribution
+
+| Repository | Role |
+| --- | --- |
+| [adapter-sdk-go](https://github.com/integrated-recorder/adapter-sdk-go) | Go Source Plugin development SDK with protocol APIs and framing. Core's conformance runner is the final executable compatibility check. |
+| [plugin-registry](https://github.com/integrated-recorder/plugin-registry) | Official distribution catalog for approved exact plugin artifacts. It does not build plugin source. |
 
 ## Plugin distribution and trust
 

@@ -34,16 +34,28 @@ Core alone decides what archived bytes mean: it owns Recording identity, metadat
 
 ## 저장소 지도
 
+### Core 및 운영
+
 | 저장소 | 역할 |
 | --- | --- |
-| [core](https://github.com/integrated-recorder/core) | Integrated Recorder 실행 본체. Runtime Host, Recorder Engine, Control Plane, Web UI/API, canonical archive와 plugin lifecycle을 소유합니다. |
-| [adapter-sdk-go](https://github.com/integrated-recorder/adapter-sdk-go) | Go Source Plugin authoring SDK. Protocol API와 framing을 제공하며 Core conformance runner가 최종 executable 호환성 기준입니다. |
-| [plugin-registry](https://github.com/integrated-recorder/plugin-registry) | 승인된 exact plugin artifact의 official index입니다. source를 build하지 않습니다. |
-| [source.owncast](https://github.com/integrated-recorder/source.owncast) | Owncast integration. first-party plugin이며 Core에 bundled되지 않고 Registry에서 v0.2.0으로 배포됩니다. |
-| [source.soop](https://github.com/integrated-recorder/source.soop) | SOOP integration 개발 저장소. 고화질 stream 선택이 해결되지 않아 stable Registry 배포 대상이 아닙니다. |
-| [source.chzzk](https://github.com/integrated-recorder/source.chzzk) | CHZZK integration. 공개 first-party source plugin이며 개발/실험 중입니다. 실제 historical DVR recording end-to-end와 Registry 배포는 아직 검증·완료되지 않았습니다. |
+| [core](https://github.com/integrated-recorder/core) | Integrated Recorder 실행 본체입니다. Runtime Host, Recorder Engine, Control Plane, Web UI/API, canonical archive와 plugin lifecycle을 소유하며 공식 설치기, Docker 배포, 설치·업그레이드 운영 문서도 관리합니다. |
 
-현재 존재하지 않는 storage provider 전용 저장소는 없습니다. `source.hls`와 `storage.local`은 각각 Core에 포함된 bundled implementation입니다.
+별도의 운영·배포 저장소는 없습니다. 설치와 업그레이드 관련 운영 절차는 `core`에서 관리합니다. `source.hls`와 `storage.local`도 별도 저장소가 아닌 Core 내장 구현입니다.
+
+### Source 플러그인
+
+| 저장소 | 역할 |
+| --- | --- |
+| [source.owncast](https://github.com/integrated-recorder/source.owncast) | Owncast 연동. Core에 내장되지 않는 first-party plugin이며 Registry에서 v0.2.0으로 배포됩니다. |
+| [source.soop](https://github.com/integrated-recorder/source.soop) | SOOP 연동 개발 저장소. 고화질 stream 선택 문제를 해결 중이며 stable Registry 배포는 보류 중입니다. |
+| [source.chzzk](https://github.com/integrated-recorder/source.chzzk) | CHZZK 연동. 공개 first-party source plugin의 개발/실험 버전입니다. 실제 historical DVR recording end-to-end는 아직 검증되지 않았고 Registry에 등록되지 않았습니다. |
+
+### 플러그인 개발·배포 기반
+
+| 저장소 | 역할 |
+| --- | --- |
+| [adapter-sdk-go](https://github.com/integrated-recorder/adapter-sdk-go) | Go Source Plugin 개발 SDK입니다. Protocol API와 framing을 제공하며 최종 executable 호환성은 Core의 conformance runner로 검증합니다. |
+| [plugin-registry](https://github.com/integrated-recorder/plugin-registry) | 승인된 exact plugin artifact의 공식 배포 catalog입니다. plugin source를 빌드하지 않습니다. |
 
 ## Plugin 배포와 신뢰
 
