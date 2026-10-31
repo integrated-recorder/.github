@@ -69,7 +69,7 @@ The plugin publisher builds and publishes an immutable executable release in the
 
 ## Current status
 
-The project is in **active development**; Core does not yet have a stable public release. Owncast is a first-party v0.2.0 plugin in the official Registry. SOOP is under development/experimental, with stable distribution deferred while its high-quality stream selection issue remains unresolved. CHZZK is a public first-party source plugin in development/experimental status; real historical DVR recording end-to-end validation and Registry listing are still pending.
+The project is in **active development**. Core has public prereleases, but no stable public release yet; see the [release list](https://github.com/integrated-recorder/core/releases) for the current version and status. Owncast is a first-party v0.2.0 plugin in the official Registry. SOOP is under development/experimental, with stable distribution deferred while its high-quality stream selection issue remains unresolved. CHZZK is a public first-party source plugin in development/experimental status; real historical DVR recording end-to-end validation and Registry listing are still pending.
 
 ## Where to start
 

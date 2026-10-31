@@ -69,7 +69,7 @@ Plugin publisher는 자신의 저장소에서 immutable executable release를 bu
 
 ## 현재 상태
 
-프로젝트는 **active development** 상태이며 Core의 안정적인 public release는 아직 없습니다. Owncast는 official Registry의 first-party v0.2.0 plugin입니다. SOOP은 개발/실험 중이고 고화질 stream 선택 문제 때문에 stable 배포를 보류하고 있습니다. CHZZK는 공개 first-party source plugin의 개발/실험 버전이며, 실제 historical DVR recording end-to-end 검증과 Registry 등록은 아직 완료되지 않았습니다.
+프로젝트는 **active development** 상태입니다. Core는 공개 prerelease를 제공하고 있지만 stable public release는 아직 없습니다. 최신 버전과 상태는 [공개 release 목록](https://github.com/integrated-recorder/core/releases)에서 확인할 수 있습니다. Owncast는 official Registry의 first-party v0.2.0 plugin입니다. SOOP은 개발/실험 중이고 고화질 stream 선택 문제 때문에 stable 배포를 보류하고 있습니다. CHZZK는 공개 first-party source plugin의 개발/실험 버전이며, 실제 historical DVR recording end-to-end 검증과 Registry 등록은 아직 완료되지 않았습니다.
 
 ## 어디서 시작할까요?
 
